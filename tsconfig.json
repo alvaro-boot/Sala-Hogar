@@ -19,10 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/components/ui/*": ["./src/components/ui/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/lib/*": ["./src/lib/*"],
+      "@/*": ["./src/*", "./*"],
+      "@/components/ui/*": ["./src/components/ui/*", "./components/ui/*"],
+      "@/components/*": ["./src/components/*", "./components/*"],
+      "@/lib/*": ["./src/lib/*", "./lib/*"],
       "@/types/*": ["./src/types/*"],
       "@/store/*": ["./src/store/*"],
       "@/contexts/*": ["./src/contexts/*"]
