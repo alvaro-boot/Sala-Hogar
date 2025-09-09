@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "Sala Hogar",
+    "description": "Tu tienda de muebles de confianza",
+    "url": "https://salahogar.com",
+    "logo": "/images/logo_salahogar.png",
+    "favicon": "/favicon.ico"
+  },
+  "theme": {
+    "colors": {
+      "primary": {
+        "50": "#f0f9ff",
+        "100": "#e0f2fe",
+        "200": "#bae6fd",
+        "300": "#7dd3fc",
+        "400": "#38bdf8",
+        "500": "#0ea5e9",
+        "600": "#0284c7",
+        "700": "#0369a1",
+        "800": "#075985",
+        "900": "#0c4a6e"
+      },
+      "secondary": {
+        "50": "#fefce8",
+        "100": "#fef9c3",
+        "200": "#fef08a",
+        "300": "#fde047",
+        "400": "#facc15",
+        "500": "#eab308",
+        "600": "#ca8a04",
+        "700": "#a16207",
+        "800": "#854d0e",
+        "900": "#713f12"
+      },
+      "accent": {
+        "50": "#f8fafc",
+        "100": "#f1f5f9",
+        "200": "#e2e8f0",
+        "300": "#cbd5e1",
+        "400": "#94a3b8",
+        "500": "#64748b",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1e293b",
+        "900": "#0f172a"
+      }
+    },
+    "fonts": {
+      "heading": "ui-serif",
+      "body": "ui-sans-serif",
+      "special": "ui-monospace"
+    }
+  },
+  "navigation": {
+    "main": [
+      { "name": "Inicio", "href": "/" },
+      { "name": "Catálogo", "href": "/catalogo" },
+      { "name": "Servicios", "href": "/services" },
+      { "name": "Nosotros", "href": "/nosotros" },
+      { "name": "Testimonios", "href": "/testimonios" },
+      { "name": "Contacto", "href": "/contact" }
+    ]
+  },
+  "contact": {
+    "phone": "305 4442883",
+    "email": "contacto@salahogar.com",
+    "address": "LAGO URIBE, Cra. 5 #28 - 02, Lago Uribe, Pereira, Risaralda",
+    "hours": "Lun-Vie: 8AM-6PM, Sáb: 8AM-6PM, Domingo: Cerrado"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/salahogarpereira?igsh=MTBmc254dzM4bjF0ZQ=="
+  }
+}

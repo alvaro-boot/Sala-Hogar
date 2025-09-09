@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://salahogar.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Allow important pages
+Allow: /catalogo/
+Allow: /services/
+Allow: /nosotros/
+Allow: /testimonios/
+Allow: /contact/

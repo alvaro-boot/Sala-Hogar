@@ -1,0 +1,163 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Sofá Modular Comfort Plus",
+      "description": "Sofá modular de 3 plazas con tapizado en tela premium y estructura de madera maciza. Perfecto para espacios modernos.",
+      "price": 5199996,
+      "originalPrice": 6399996,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=400&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&h=400&fit=crop&crop=center"
+      ],
+      "category": "",
+      "subcategory": "",
+      "colors": [
+        "Beige",
+        "Gris",
+        "Azul Marino"
+      ],
+      "materials": [
+        "Tela",
+        "Madera",
+        "Espuma HR"
+      ],
+      "dimensions": {
+        "width": 220,
+        "height": 85,
+        "depth": 95
+      },
+      "weight": 65,
+      "inStock": true,
+      "stockQuantity": 15,
+      "rating": 4.8,
+      "reviewCount": 124,
+      "features": [
+        "Tapizado removible y lavable",
+        "Estructura de madera maciza",
+        "Cojines de espuma de alta densidad",
+        "Diseño modular configurable"
+      ],
+      "specifications": {
+        "Material del marco": "Madera de pino",
+        "Tapizado": "Tela 100% poliéster",
+        "Relleno": "Espuma HR 35kg/m³",
+        "Garantía": "2 años"
+      },
+      "tags": [
+        "moderno",
+        "confortable",
+        "modular",
+        "sala"
+      ],
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2025-09-09T22:13:10.750Z"
+    },
+    {
+      "id": "2",
+      "name": "Mesa de Comedor Extensible Oak",
+      "description": "Mesa de comedor extensible en madera de roble natural. Capacidad para 6-8 personas con sistema de extensión fácil.",
+      "price": 3599996,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center"
+      ],
+      "category": "comedor",
+      "subcategory": "mesas",
+      "colors": [
+        "Roble Natural",
+        "Roble Oscuro"
+      ],
+      "materials": [
+        "Madera de Roble",
+        "Metal"
+      ],
+      "dimensions": {
+        "width": 180,
+        "height": 75,
+        "depth": 90
+      },
+      "weight": 45,
+      "inStock": true,
+      "stockQuantity": 8,
+      "rating": 4.6,
+      "reviewCount": 89,
+      "features": [
+        "Madera de roble 100% natural",
+        "Sistema de extensión suave",
+        "Acabado resistente al agua",
+        "Patas reforzadas con metal"
+      ],
+      "specifications": {
+        "Material": "Roble macizo",
+        "Acabado": "Barniz poliuretano",
+        "Capacidad": "6-8 personas",
+        "Extensión": "180cm a 230cm"
+      },
+      "tags": [
+        "comedor",
+        "extensible",
+        "madera",
+        "roble"
+      ],
+      "createdAt": "2024-01-10T08:00:00Z",
+      "updatedAt": "2024-01-18T12:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Cama King Size Luxury Dream",
+      "description": "Cama king size con cabecero tapizado y base con almacenamiento. Diseño elegante para dormitorios principales.",
+      "price": 6399996,
+      "originalPrice": 7599996,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop&crop=center"
+      ],
+      "category": "dormitorio",
+      "subcategory": "camas",
+      "colors": [
+        "Gris Antracita",
+        "Beige",
+        "Blanco"
+      ],
+      "materials": [
+        "Tela",
+        "Madera",
+        "Metal"
+      ],
+      "dimensions": {
+        "width": 200,
+        "height": 120,
+        "depth": 220
+      },
+      "weight": 85,
+      "inStock": true,
+      "stockQuantity": 5,
+      "rating": 4.9,
+      "reviewCount": 156,
+      "features": [
+        "Cabecero tapizado acolchado",
+        "Base con 4 cajones de almacenamiento",
+        "Estructura reforzada",
+        "Fácil montaje"
+      ],
+      "specifications": {
+        "Tamaño": "King Size (200x200cm)",
+        "Material cabecero": "Tela premium",
+        "Base": "MDF con cajones",
+        "Peso máximo": "200kg"
+      },
+      "tags": [
+        "dormitorio",
+        "king",
+        "almacenamiento",
+        "luxury"
+      ],
+      "createdAt": "2024-01-12T14:00:00Z",
+      "updatedAt": "2024-01-22T09:15:00Z"
+    }
+  ]
+}
