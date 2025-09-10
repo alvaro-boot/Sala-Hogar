@@ -254,6 +254,10 @@ export function ProductManager() {
               <Button variant="outline" size="sm" onClick={handleRefresh}>
                 <RefreshCw className="w-4 h-4" />
               </Button>
+              <Button size="sm" onClick={() => setShowForm(true)}>
+                <Plus className="w-4 h-4 mr-2" />
+                Nuevo Producto
+              </Button>
             </div>
           </div>
         </CardHeader>
@@ -417,7 +421,7 @@ export function ProductManager() {
 
       {/* Product Form Dialog */}
       <Dialog open={showForm} onOpenChange={setShowForm}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-6xl max-h-[95vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>
               {editingProduct ? 'Editar Producto' : 'Nuevo Producto'}
@@ -434,6 +438,7 @@ export function ProductManager() {
             onSave={() => {
               setShowForm(false)
               setEditingProduct(null)
+              handleRefresh()
             }}
             onCancel={() => {
               setShowForm(false)
