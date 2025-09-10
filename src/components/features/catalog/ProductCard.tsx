@@ -33,7 +33,8 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group bg-white rounded-xl shadow-sm border hover:shadow-lg transition-all duration-300">
       {/* Image Container */}
-      <div className="relative aspect-square overflow-hidden rounded-t-xl">
+      <Link href={`/productos/${product.id}`} className="block">
+        <div className="relative aspect-square overflow-hidden rounded-t-xl">
         <Image
           src={product.images[0] || "/placeholder.svg"}
           alt={product.name}
@@ -60,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Heart className={`w-4 h-4 ${isWishlisted ? "fill-red-500 text-red-500" : ""}`} />
           </Button>
           <Button variant="secondary" size="icon" className="w-8 h-8 bg-white/90 hover:bg-white" asChild>
-            <Link href={`/producto/${product.id}`}>
+            <Link href={`/productos/${product.id}`}>
               <Eye className="w-4 h-4" />
             </Link>
           </Button>
@@ -73,7 +74,8 @@ export function ProductCard({ product }: ProductCardProps) {
             Agregar al Carrito
           </Button>
         </div>
-      </div>
+        </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4 space-y-3">
@@ -84,7 +86,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Title */}
         <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
-          <Link href={`/producto/${product.id}`}>{product.name}</Link>
+          <Link href={`/productos/${product.id}`}>{product.name}</Link>
         </h3>
 
         {/* Rating */}

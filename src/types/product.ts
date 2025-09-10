@@ -20,7 +20,7 @@ export interface Product {
   rating: number
   reviewCount: number
   features: string[]
-  specifications: Record<string, string>
+  specifications?: Array<{ name: string; value: string }>
   tags: string[]
   createdAt: string
   updatedAt: string
