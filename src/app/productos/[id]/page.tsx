@@ -11,6 +11,7 @@ import { useProductStore } from '@/store/product-store'
 import { useCartStore } from '@/store/cart-store'
 import { Product } from '@/types/product'
 import { formatPrice } from '@/lib/currency'
+import { sampleProducts } from '@/data/sample-products'
 
 export default function ProductDetailsPage() {
   const params = useParams()
@@ -26,8 +27,14 @@ export default function ProductDetailsPage() {
   useEffect(() => {
     const loadData = async () => {
       setLoading(true)
-      await loadProducts()
-      setLoading(false)
+      try {
+        await loadProducts()
+        console.log('Productos cargados:', products.length)
+      } catch (error) {
+        console.error('Error cargando productos:', error)
+      } finally {
+        setLoading(false)
+      }
     }
     loadData()
   }, [loadProducts])
@@ -36,7 +43,9 @@ export default function ProductDetailsPage() {
     console.log('ProductDetailsPage - params.id:', params.id)
     console.log('ProductDetailsPage - products:', products.length)
     if (params.id) {
-      const foundProduct = products.find(p => p.id === params.id)
+      // Usar productos del store o productos de muestra como fallback
+      const allProducts = products.length > 0 ? products : sampleProducts
+      const foundProduct = allProducts.find(p => p.id === params.id)
       console.log('ProductDetailsPage - foundProduct:', foundProduct)
       setProduct(foundProduct || null)
     }
@@ -261,7 +270,7 @@ export default function ProductDetailsPage() {
         <div className="mt-16">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Productos Relacionados</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products
+            {(products.length > 0 ? products : sampleProducts)
               .filter(p => p.id !== product.id && p.category === product.category)
               .slice(0, 4)
               .map((relatedProduct) => (
