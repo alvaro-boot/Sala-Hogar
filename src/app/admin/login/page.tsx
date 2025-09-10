@@ -142,13 +142,6 @@ export default function LoginPage() {
               </Button>
             </form>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <h4 className="text-sm font-medium text-gray-900 mb-2">Credenciales de prueba:</h4>
-              <p className="text-xs text-gray-600">
-                <strong>Email:</strong> admin@salahogar.com<br />
-                <strong>Contraseña:</strong> admin123
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>
