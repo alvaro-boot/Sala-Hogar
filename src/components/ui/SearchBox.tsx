@@ -25,6 +25,7 @@ export function SearchBox({
   
   const {
     searchQuery,
+    setSearchQuery,
     handleSearch,
     handleSearchSubmit,
     handleSearchChange,
