@@ -14,9 +14,10 @@ import type { Product } from "../../../types/product"
 
 interface ProductCardProps {
   product: Product
+  onProductClick?: (product: Product) => void
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, onProductClick }: ProductCardProps) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [isWishlisted, setIsWishlisted] = useState(false)
   const { addItem } = useCartStore()
@@ -35,7 +36,11 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   const handleCardClick = () => {
-    router.push(`/productos/${product.id}`)
+    if (onProductClick) {
+      onProductClick(product)
+    } else {
+      router.push(`/productos/${product.id}`)
+    }
   }
 
   return (

@@ -9,8 +9,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ProductCard } from "../../components/features/catalog/ProductCard"
 import { FilterPanel } from "../../components/features/catalog/FilterPanel"
 import { CategoryNav } from "../../components/features/catalog/CategoryNav"
+import { ProductModal } from "../../components/features/catalog/ProductModal"
 import { useProductStore } from "../../store/product-store"
 import { sampleProducts } from "../../data/sample-products"
+import { Product } from "../../types/product"
 
 export default function CatalogoPage() {
   const { products, loadProducts, filteredProducts, filters, setFilters, loading } = useProductStore()
@@ -19,6 +21,8 @@ export default function CatalogoPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [showFilters, setShowFilters] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     // Cargar productos desde el archivo JSON
@@ -38,6 +42,16 @@ export default function CatalogoPage() {
   const handleSearch = (value: string) => {
     setSearchTerm(value)
     setFilters({ search: value })
+  }
+
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setSelectedProduct(null)
   }
 
   const handleSortChange = (value: string) => {
@@ -167,13 +181,24 @@ export default function CatalogoPage() {
                 }`}
               >
                 {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard 
+                    key={product.id} 
+                    product={product} 
+                    onProductClick={handleProductClick}
+                  />
                 ))}
               </div>
             )}
           </div>
         </div>
       </div>
+
+      {/* Product Modal */}
+      <ProductModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   )
 }
