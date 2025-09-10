@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Star, Heart, ShoppingCart, Eye } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -19,22 +20,28 @@ export function ProductCard({ product }: ProductCardProps) {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
   const [isWishlisted, setIsWishlisted] = useState(false)
   const { addItem } = useCartStore()
+  const router = useRouter()
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation()
     addItem(product, selectedColor)
     toast.success(`${product.name} agregado al carrito`)
   }
 
-  const handleWishlist = () => {
+  const handleWishlist = (e: React.MouseEvent) => {
+    e.stopPropagation()
     setIsWishlisted(!isWishlisted)
     toast.success(isWishlisted ? "Eliminado de favoritos" : "Agregado a favoritos")
   }
 
+  const handleCardClick = () => {
+    router.push(`/productos/${product.id}`)
+  }
+
   return (
-    <div className="group bg-white rounded-xl shadow-sm border hover:shadow-lg transition-all duration-300">
+    <div className="group bg-white rounded-xl shadow-sm border hover:shadow-lg transition-all duration-300 cursor-pointer" onClick={handleCardClick}>
       {/* Image Container */}
-      <Link href={`/productos/${product.id}`} className="block">
-        <div className="relative aspect-square overflow-hidden rounded-t-xl">
+      <div className="relative aspect-square overflow-hidden rounded-t-xl">
         <Image
           src={product.images[0] || "/placeholder.svg"}
           alt={product.name}
@@ -60,11 +67,6 @@ export function ProductCard({ product }: ProductCardProps) {
           >
             <Heart className={`w-4 h-4 ${isWishlisted ? "fill-red-500 text-red-500" : ""}`} />
           </Button>
-          <Button variant="secondary" size="icon" className="w-8 h-8 bg-white/90 hover:bg-white" asChild>
-            <Link href={`/productos/${product.id}`}>
-              <Eye className="w-4 h-4" />
-            </Link>
-          </Button>
         </div>
 
         {/* Overlay Actions */}
@@ -74,8 +76,7 @@ export function ProductCard({ product }: ProductCardProps) {
             Agregar al Carrito
           </Button>
         </div>
-        </div>
-      </Link>
+      </div>
 
       {/* Content */}
       <div className="p-4 space-y-3">
@@ -86,7 +87,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Title */}
         <h3 className="font-semibold text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
-          <Link href={`/productos/${product.id}`}>{product.name}</Link>
+          {product.name}
         </h3>
 
         {/* Rating */}
