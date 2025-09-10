@@ -119,7 +119,7 @@ export function createTemplateMessage(
   
   return {
     messaging_product: "whatsapp",
-    to: "573002048198",
+    to: "573054442883",
     type: "template",
     template: {
       name: "order_confirmation", // Nombre del template en WhatsApp Business
