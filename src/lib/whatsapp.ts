@@ -31,7 +31,7 @@ ${index + 1}. *${item.name}*
 Por favor, confirme su pedido y proporcione sus datos de contacto para coordinar la entrega.
 
 📞 *Contacto Sala Hogar:*
-WhatsApp: 3002048198
+WhatsApp: 3054442883
 
 ¡Gracias por elegir Sala Hogar! 🏠✨`
 
@@ -39,7 +39,7 @@ WhatsApp: 3002048198
 }
 
 export function sendToWhatsApp(items: CartItem[], total: number): void {
-  const phoneNumber = '3002048198'
+  const phoneNumber = '573054442883'
   const message = generateWhatsAppMessage(items, total)
   
   // Codificar el mensaje para URL
@@ -69,7 +69,7 @@ export function createStructuredMessage(
   
   return {
     messaging_product: "whatsapp",
-    to: "573002048198", // Número en formato internacional
+    to: "573054442883", // Número en formato internacional
     type: "interactive",
     interactive: {
       type: "product_list",
@@ -207,7 +207,7 @@ export function sendToWhatsAppWithCustomerInfo(
     notes?: string
   }
 ): void {
-  const phoneNumber = '3002048198'
+  const phoneNumber = '573054442883'
   
   // Crear mensaje mejorado con formato de tarjeta visual
   const message = `🏠 *SALA HOGAR - NUEVA ORDEN* 🏠
@@ -231,7 +231,7 @@ ${index + 1}. *${item.name}*
 
 💵 *TOTAL: ${formatPrice(total)}*
 
-📞 *Contacto:* 3002048198
+📞 *Contacto:* 3054442883
 ¡Gracias por elegir Sala Hogar! 🏠✨`
   
   // Codificar el mensaje para URL
