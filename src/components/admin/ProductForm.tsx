@@ -12,6 +12,8 @@ import { Badge } from '@/components/ui/badge'
 import { X, Plus, Trash2, Upload, Image as ImageIcon } from 'lucide-react'
 import { formatPrice } from '@/lib/currency'
 import type { Product } from '@/types/product'
+import { useProductStore } from '@/store/product-store'
+import { toast } from 'sonner'
 
 interface ProductFormProps {
   product?: Product | null
@@ -20,6 +22,7 @@ interface ProductFormProps {
 }
 
 export function ProductForm({ product, onSave, onCancel }: ProductFormProps) {
+  const { addProduct, updateProduct } = useProductStore()
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -111,11 +114,16 @@ export function ProductForm({ product, onSave, onCancel }: ProductFormProps) {
         updatedAt: new Date().toISOString(),
       }
 
-      // Aquí deberías llamar a la función de guardar del store
-      console.log('Product data to save:', cleanedData)
-      
-      // Simular guardado
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Guardar el producto usando el store
+      if (product) {
+        // Actualizar producto existente
+        await updateProduct(product.id, cleanedData)
+        toast.success('Producto actualizado correctamente')
+      } else {
+        // Crear nuevo producto
+        await addProduct(cleanedData)
+        toast.success('Producto creado correctamente')
+      }
       
       onSave()
     } catch (error) {
