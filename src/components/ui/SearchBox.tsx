@@ -2,8 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Search, X } from 'lucide-react'
-import { Input } from './input'
-import { Button } from './button'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 import { useSearch } from '@/hooks/useSearch'
 import Link from 'next/link'
 
