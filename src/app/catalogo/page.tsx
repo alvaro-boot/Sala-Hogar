@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useSearchParams } from "next/navigation"
 import { Search, Grid, List, SlidersHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,6 +14,7 @@ import { sampleProducts } from "../../data/sample-products"
 
 export default function CatalogoPage() {
   const { products, loadProducts, filteredProducts, filters, setFilters, loading } = useProductStore()
+  const searchParams = useSearchParams()
 
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [showFilters, setShowFilters] = useState(false)
@@ -21,9 +23,17 @@ export default function CatalogoPage() {
   useEffect(() => {
     // Cargar productos desde el archivo JSON
     loadProducts()
-    // Clear any existing filters when loading the main catalog
-    setFilters({})
-  }, [loadProducts, setFilters])
+    
+    // Verificar si hay parámetros de búsqueda en la URL
+    const query = searchParams.get('q')
+    if (query) {
+      setSearchTerm(query)
+      setFilters({ search: query })
+    } else {
+      // Clear any existing filters when loading the main catalog
+      setFilters({})
+    }
+  }, [loadProducts, setFilters, searchParams])
 
   const handleSearch = (value: string) => {
     setSearchTerm(value)

@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Search } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Logo } from "../ui/Logo"
 import { CartIcon } from "../features/cart/CartIcon"
 import { CartDrawer } from "./CartDrawer"
+import { SearchBox } from "../ui/SearchBox"
 
 const siteConfig = {
   site: {
@@ -63,10 +63,7 @@ export function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center space-x-4">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                <Input type="search" placeholder="Buscar productos..." className="pl-10 w-64" />
-              </div>
+              <SearchBox className="w-64" />
               <CartIcon onClick={() => setIsCartOpen(true)} />
             </div>
 
@@ -81,10 +78,7 @@ export function Navbar() {
           {isOpen && (
             <div className="lg:hidden bg-white border-t">
               <div className="px-4 py-4 space-y-4">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <Input type="search" placeholder="Buscar productos..." className="pl-10" />
-                </div>
+                <SearchBox />
                 <div className="space-y-2">
                   {siteConfig.navigation.main.map((item) => (
                     <Link
