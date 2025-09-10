@@ -10,7 +10,7 @@ import { Separator } from '@/components/ui/separator'
 import { useProductStore } from '@/store/product-store'
 import { useCartStore } from '@/store/cart-store'
 import { Product } from '@/types/product'
-import { formatPrice } from '@/lib/utils'
+import { formatPrice } from '@/lib/currency'
 
 export default function ProductDetailsPage() {
   const params = useParams()
@@ -24,14 +24,21 @@ export default function ProductDetailsPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    loadProducts()
+    const loadData = async () => {
+      setLoading(true)
+      await loadProducts()
+      setLoading(false)
+    }
+    loadData()
   }, [loadProducts])
 
   useEffect(() => {
-    if (products.length > 0 && params.id) {
+    console.log('ProductDetailsPage - params.id:', params.id)
+    console.log('ProductDetailsPage - products:', products.length)
+    if (params.id) {
       const foundProduct = products.find(p => p.id === params.id)
+      console.log('ProductDetailsPage - foundProduct:', foundProduct)
       setProduct(foundProduct || null)
-      setLoading(false)
     }
   }, [products, params.id])
 
