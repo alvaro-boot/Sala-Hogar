@@ -1,5 +1,6 @@
 import { create } from "zustand"
 import type { Product, ProductFilters } from "@/types/product"
+import { sampleProducts } from "@/data/sample-products"
 
 interface ProductStore {
   products: Product[]
@@ -43,7 +44,7 @@ export const useProductStore = create<ProductStore>((set, get) => ({
         console.log('Productos cargados desde API:', data.products?.length || 0)
         set({ products: data.products || [], filteredProducts: data.products || [], loading: false })
       } else {
-        console.log('API falló, usando localStorage como fallback')
+        console.log('API falló, usando localStorage o datos locales como fallback')
         // Fallback a localStorage si la API falla
         if (typeof window !== 'undefined') {
           const stored = localStorage.getItem('salahogar_products')
@@ -52,11 +53,11 @@ export const useProductStore = create<ProductStore>((set, get) => ({
             console.log('Productos cargados desde localStorage:', data.products?.length || 0)
             set({ products: data.products || [], filteredProducts: data.products || [], loading: false })
           } else {
-            console.log('No hay productos en localStorage, usando array vacío')
-            set({ products: [], filteredProducts: [], loading: false })
+            console.log('No hay productos en localStorage, usando sampleProducts')
+            set({ products: sampleProducts as unknown as Product[], filteredProducts: sampleProducts as unknown as Product[], loading: false })
           }
         } else {
-          set({ products: [], filteredProducts: [], loading: false })
+          set({ products: sampleProducts as unknown as Product[], filteredProducts: sampleProducts as unknown as Product[], loading: false })
         }
       }
     } catch (error) {
