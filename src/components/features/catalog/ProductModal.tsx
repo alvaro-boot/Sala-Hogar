@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { useCartStore } from '@/store/cart-store'
 import { Product } from '@/types/product'
-import { formatPrice } from '@/lib/currency'
+import { formatPrice } from '@/lib/utils'
 
 interface ProductModalProps {
   product: Product | null

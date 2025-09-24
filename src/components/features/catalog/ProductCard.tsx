@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useCartStore } from "../../../store/cart-store"
 import { toast } from "sonner"
-import { formatPrice } from "../../../lib/currency"
+import { formatPrice } from "@/lib/utils"
 import type { Product } from "../../../types/product"
 
 interface ProductCardProps {
