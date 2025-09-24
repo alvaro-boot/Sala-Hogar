@@ -40,7 +40,7 @@ export default function NosotrosPage() {
               <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">Sobre Nosotros</Badge>
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Transformando hogares desde{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">2009</span>
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">1990</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Somos una empresa familiar dedicada a crear espacios únicos y funcionales. Con más de 15 años de
@@ -49,7 +49,7 @@ export default function NosotrosPage() {
               <div className="grid grid-cols-3 gap-8 pt-8 border-t">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600">15+</div>
-                  <div className="text-sm text-gray-600">Años de Experiencia</div>
+                <div className="text-sm text-gray-600">Años de Experiencia</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600">10k+</div>
@@ -99,7 +99,7 @@ export default function NosotrosPage() {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">Nuestra Visión</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Ser la marca de muebles más confiable y querida de América Latina, reconocida por nuestra innovación,
+                  Ser la marca de muebles más confiable y querida de Colombia, reconocida por nuestra innovación,
                   calidad excepcional y compromiso genuino con la satisfacción del cliente. Queremos estar en cada hogar
                   que busque estilo y funcionalidad.
                 </p>

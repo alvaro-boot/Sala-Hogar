@@ -37,7 +37,17 @@ function CatalogoContent() {
       // Clear any existing filters when loading the main catalog
       setFilters({})
     }
-  }, [loadProducts, setFilters, searchParams])
+
+    // Abrir modal si llega product en query
+    const productId = searchParams.get('product')
+    if (productId && Array.isArray(filteredProducts)) {
+      const product = filteredProducts.find((p: any) => String(p.id) === String(productId))
+      if (product) {
+        setSelectedProduct(product as Product)
+        setIsModalOpen(true)
+      }
+    }
+  }, [loadProducts, setFilters, searchParams, filteredProducts])
 
   const handleSearch = (value: string) => {
     setSearchTerm(value)

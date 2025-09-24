@@ -56,18 +56,19 @@ export function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
   }
 
   const handleShare = async () => {
+    const shareUrl = `${window.location.origin}/catalogo?product=${product.id}`
     if (navigator.share) {
       try {
         await navigator.share({
           title: product.name,
           text: product.description,
-          url: window.location.href,
+          url: shareUrl,
         })
       } catch (error) {
         console.log('Error sharing:', error)
       }
     } else {
-      navigator.clipboard.writeText(window.location.href)
+      await navigator.clipboard.writeText(shareUrl)
       alert('¡Enlace copiado al portapapeles!')
     }
   }

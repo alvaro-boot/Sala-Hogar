@@ -29,13 +29,13 @@ export default function HomePage() {
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Los Mejores{" "}
                   <span className="bg-gradient-to-r from-blue-600 to-yellow-500 bg-clip-text text-transparent">
-                    Muebles en Pereira
+                    Muebles
                   </span>{" "}
                   | Sala Hogar
                 </h1>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Descubre la mejor tienda de muebles en Pereira, Risaralda. Sofás, camas, mesas y sillas de alta calidad. 
-                  Envío gratis en Pereira, asesoría personalizada y garantía de satisfacción. ¡Transforma tu hogar con nosotros!
+                  Descubre la mejor tienda de muebles. Sofás, camas, mesas y sillas de alta calidad.
+                  Envío local, asesoría personalizada y garantía de satisfacción. ¡Transforma tu hogar con nosotros!
                 </p>
               </div>
 
@@ -109,7 +109,7 @@ export default function HomePage() {
                 <Truck className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold">Envío Gratis</h3>
-              <p className="text-gray-600">Envío gratuito en compras superiores a $500</p>
+              <p className="text-gray-600">Envío gratuito en Pereira y Dos Quebradas por compras superiores a $500.000</p>
             </div>
 
             <div className="text-center space-y-4">
@@ -117,15 +117,15 @@ export default function HomePage() {
                 <Shield className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold">Garantía</h3>
-              <p className="text-gray-600">2 años de garantía en todos nuestros productos</p>
+              <p className="text-gray-600">Garantía en todos nuestros productos, somos fabricantes</p>
             </div>
 
             <div className="text-center space-y-4">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
                 <Headphones className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold">Soporte 24/7</h3>
-              <p className="text-gray-600">Atención al cliente disponible todos los días</p>
+              <h3 className="text-xl font-semibold">Atención Personalizada</h3>
+              <p className="text-gray-600">Atención al cliente de lunes a sábado según horario de atención</p>
             </div>
 
             <div className="text-center space-y-4">

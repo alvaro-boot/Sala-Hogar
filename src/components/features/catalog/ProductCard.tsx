@@ -107,7 +107,9 @@ export function ProductCard({ product, onProductClick }: ProductCardProps) {
               />
             ))}
           </div>
-          <span className="text-sm text-gray-500">({product.reviews})</span>
+          {product.reviews > 0 && (
+            <span className="text-sm text-gray-500">{product.reviews}</span>
+          )}
         </div>
 
         {/* Colors */}
@@ -137,8 +139,8 @@ export function ProductCard({ product, onProductClick }: ProductCardProps) {
             )}
           </div>
           {product.inStock ? (
-            <Badge variant="outline" className="text-green-600 border-green-600">
-              En Stock
+            <Badge variant="secondary" className="bg-green-100 text-green-700 border-0 px-2 py-0.5 rounded-full text-xs">
+              En stock
             </Badge>
           ) : (
             <Badge variant="outline" className="text-red-600 border-red-600">
