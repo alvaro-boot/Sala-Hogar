@@ -18,7 +18,8 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, onProductClick }: ProductCardProps) {
-  const [selectedColor, setSelectedColor] = useState(product.colors[0])
+  const initialColor = Array.isArray(product.colors) && product.colors.length > 0 ? product.colors[0] : 'default'
+  const [selectedColor, setSelectedColor] = useState(initialColor)
   const [isWishlisted, setIsWishlisted] = useState(false)
   const { addItem } = useCartStore()
   const router = useRouter()
@@ -113,10 +114,11 @@ export function ProductCard({ product, onProductClick }: ProductCardProps) {
         </div>
 
         {/* Colors */}
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">Color:</span>
-          <div className="flex gap-1">
-            {product.colors.map((color) => (
+          {Array.isArray(product.colors) && product.colors.length > 0 && (
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-600">Color:</span>
+            <div className="flex gap-1">
+              {product.colors.map((color) => (
               <button
                 key={color}
                 className={`w-6 h-6 rounded-full border-2 ${
@@ -128,7 +130,8 @@ export function ProductCard({ product, onProductClick }: ProductCardProps) {
               />
             ))}
           </div>
-        </div>
+          </div>
+          )}
 
         {/* Price */}
         <div className="flex items-center justify-between">
