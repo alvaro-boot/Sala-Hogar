@@ -43,12 +43,12 @@ export default function NosotrosPage() {
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">1990</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Somos una empresa familiar dedicada a crear espacios únicos y funcionales. Con más de 15 años de
+                Somos una empresa familiar dedicada a crear espacios únicos y funcionales. Con más de 35 años de
                 experiencia, hemos ayudado a miles de familias a encontrar los muebles perfectos para sus hogares.
               </p>
               <div className="grid grid-cols-3 gap-8 pt-8 border-t">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">15+</div>
+                  <div className="text-3xl font-bold text-blue-600">35+</div>
                 <div className="text-sm text-gray-600">Años de Experiencia</div>
                 </div>
                 <div className="text-center">
