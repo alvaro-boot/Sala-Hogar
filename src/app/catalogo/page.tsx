@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, Suspense } from "react"
+import { useEffect, useRef, useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import { Search, Grid, List, SlidersHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -24,30 +24,40 @@ function CatalogoContent() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  // Cargar productos solo una vez
   useEffect(() => {
-    // Cargar productos desde el archivo JSON
     loadProducts()
-    
-    // Verificar si hay parámetros de búsqueda en la URL
+  }, [loadProducts])
+
+  // Sincronizar búsqueda desde la URL sin provocar bucles
+  useEffect(() => {
     const query = searchParams.get('q')
     if (query) {
       setSearchTerm(query)
       setFilters({ search: query })
     } else {
-      // Clear any existing filters when loading the main catalog
-      setFilters({})
+      // Solo limpiar si había búsqueda activa
+      if (filters.search) {
+        setFilters({ search: undefined })
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams])
 
-    // Abrir modal si llega product en query
+  // Abrir modal por ?product= una sola vez
+  const openedFromQueryRef = useRef(false)
+  useEffect(() => {
+    if (openedFromQueryRef.current) return
     const productId = searchParams.get('product')
-    if (productId && Array.isArray(filteredProducts)) {
-      const product = filteredProducts.find((p: any) => String(p.id) === String(productId))
+    if (productId && Array.isArray(products) && products.length > 0) {
+      const product = products.find((p: any) => String(p.id) === String(productId))
       if (product) {
         setSelectedProduct(product as Product)
         setIsModalOpen(true)
+        openedFromQueryRef.current = true
       }
     }
-  }, [loadProducts, setFilters, searchParams, filteredProducts])
+  }, [searchParams, products])
 
   const handleSearch = (value: string) => {
     setSearchTerm(value)
